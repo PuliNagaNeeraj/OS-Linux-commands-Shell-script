@@ -113,6 +113,7 @@ This is my world
 
 cat > file22
 
+ 
 1001 | Ram | 10000 | HR
 1002 | tom |  5000 | Admin
 1003 | Joe |  7000 | Developer
@@ -290,6 +291,8 @@ Linux is best in this World
 
 cat > file23
 
+
+
 1001 | Ram | 10000 | HR
 1001 | Ram | 10000 | HR
 1002 | tom |  5000 | Admin
@@ -318,6 +321,7 @@ sed -n -e '$p' file23
 sed  -e 's/Ram/Sita/' file23
 ## OUTPUT
 
+
 1001 | Sita | 10000 | HR
 1001 | Sita | 10000 | HR
 1002 | tom |  5000 | Admin
@@ -331,6 +335,7 @@ sed  -e 's/Ram/Sita/' file23
 sed  -e '2s/Ram/Sita/' file23
 ## OUTPUT
 
+
 1001 | Ram | 10000 | HR
 1001 | Sita | 10000 | HR
 1002 | tom |  5000 | Admin
@@ -343,6 +348,7 @@ sed  -e '2s/Ram/Sita/' file23
 
 sed  '/tom/s/5000/6000/' file23
 ## OUTPUT
+
 
 1001 | Ram | 10000 | HR
 1001 | Ram | 10000 | HR
@@ -358,6 +364,7 @@ sed  '/tom/s/5000/6000/' file23
 sed -n -e '1,5p' file23
 ## OUTPUT
 
+
 1001 | Ram | 10000 | HR
 1001 | Ram | 10000 | HR
 1002 | tom |  5000 | Admin
@@ -368,6 +375,7 @@ sed -n -e '1,5p' file23
 sed -n -e '2,/Joe/p' file23
 ## OUTPUT
 
+
 1001 | Ram | 10000 | HR
 1002 | tom |  5000 | Admin
 1003 | Joe |  7000 | Developer
@@ -376,6 +384,7 @@ sed -n -e '2,/Joe/p' file23
 
 sed -n -e '/tom/,/Joe/p' file23
 ## OUTPUT
+
 
 1002 | tom |  5000 | Admin
 1003 | Joe |  7000 | Developer
