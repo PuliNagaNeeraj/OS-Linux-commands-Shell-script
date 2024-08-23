@@ -113,11 +113,11 @@ This is my world
 
 cat > file22
 
- 
 1001 | Ram | 10000 | HR
 1002 | tom |  5000 | Admin
 1003 | Joe |  7000 | Developer
 ^d
+
 
 
 cut -c1-3 file11
@@ -127,12 +127,16 @@ Hel
 Thi
 
 
+
+
+
 cut -d "|" -f 1 file22
 ## OUTPUT
 
 1001
 1002
 1003
+
 
 cut -d "|" -f 2 file22
 ## OUTPUT
@@ -156,27 +160,43 @@ grep Hello newfile
 
 Hello world
 
+
+
 grep hello newfile 
 ## OUTPUT
 
+
+
 hello world
+
 
 grep -v hello newfile 
 ## OUTPUT
 
 Hello world
 
+
 cat newfile | grep -i "hello"
 ## OUTPUT
 
+
 Hello world
 hello world
+
+`
 
 
 cat newfile | grep -i -c "hello"
 ## OUTPUT
 
+
 2
+
+
+
+
+
+
 
 grep -w -n world newfile   
 ## OUTPUT
@@ -211,6 +231,7 @@ Hello world
 hello world
 
 
+
 egrep -w '(H|h)ello' newfile 
 ## OUTPUT
 
@@ -219,12 +240,16 @@ Hello world
 hello world
 
 
+
 egrep -w '(H|h)ell[a-z]' newfile 
 ## OUTPUT
 
 
 Hello world
 hello world
+
+
+
 
 
 egrep '(^hello)' newfile 
@@ -274,8 +299,10 @@ egrep 'Linux.*World' newfile
 Linux is best in this World
 
 
+
 egrep l{2} newfile
 ## OUTPUT
+
 
 Hello world
 hello world
@@ -291,8 +318,6 @@ Linux is best in this World
 
 cat > file23
 
-
-
 1001 | Ram | 10000 | HR
 1001 | Ram | 10000 | HR
 1002 | tom |  5000 | Admin
@@ -304,10 +329,12 @@ cat > file23
 ^d
 
 
+
 sed -n -e '3p' file23
 ## OUTPUT
 
 1002 | tom |  5000 | Admin
+
 
 
 
@@ -318,9 +345,10 @@ sed -n -e '$p' file23
 
 
 
+
+
 sed  -e 's/Ram/Sita/' file23
 ## OUTPUT
-
 
 1001 | Sita | 10000 | HR
 1001 | Sita | 10000 | HR
@@ -332,9 +360,9 @@ sed  -e 's/Ram/Sita/' file23
 1001 | Sita | 10000 | HR
 
 
+
 sed  -e '2s/Ram/Sita/' file23
 ## OUTPUT
-
 
 1001 | Ram | 10000 | HR
 1001 | Sita | 10000 | HR
@@ -349,7 +377,6 @@ sed  -e '2s/Ram/Sita/' file23
 sed  '/tom/s/5000/6000/' file23
 ## OUTPUT
 
-
 1001 | Ram | 10000 | HR
 1001 | Ram | 10000 | HR
 1002 | tom |  6000 | Admin
@@ -361,9 +388,9 @@ sed  '/tom/s/5000/6000/' file23
 
 
 
+
 sed -n -e '1,5p' file23
 ## OUTPUT
-
 
 1001 | Ram | 10000 | HR
 1001 | Ram | 10000 | HR
@@ -375,16 +402,15 @@ sed -n -e '1,5p' file23
 sed -n -e '2,/Joe/p' file23
 ## OUTPUT
 
-
 1001 | Ram | 10000 | HR
 1002 | tom |  5000 | Admin
 1003 | Joe |  7000 | Developer
 
 
 
+
 sed -n -e '/tom/,/Joe/p' file23
 ## OUTPUT
-
 
 1002 | tom |  5000 | Admin
 1003 | Joe |  7000 | Developer
@@ -413,8 +439,11 @@ seq 10 | sed -n '4,6p'
 6
 
 
+
+
 seq 10 | sed -n '2,~4p'
 ## OUTPUT
+
 
 sed: no address after comma
 
@@ -436,8 +465,12 @@ hello
 2
 
 
+
+
 seq 10 | sed '2,9c hello'
 ## OUTPUT
+
+
 
 1
 hello
@@ -454,6 +487,7 @@ $1003 | Joe |  7000 | Developer
 
 sed -n '2,4{s/$/*/;p}' file23
 ## OUTPUT
+
 
 1001 | Ram | 10000 | HR*
 1002 | tom |  5000 | Admin*
@@ -536,6 +570,7 @@ www.google.com
 www.mrcet....com
 
 
+ 
 cat urllist.txt | tr -d ' ' | tr -s '.'
 ## OUTPUT
 
@@ -558,6 +593,8 @@ hello.js
 newfile
 readme.txt
 urllist.txt
+
+
 
 
 
@@ -600,6 +637,7 @@ for this non stop movement
 stop
 
 
+ 
 cat << stop > herecheck.txt
 
 hello in this world
@@ -774,6 +812,7 @@ fi
 
 "/root The object exists, is it a file?"
 "No,/root it is not a file!"
+
 
 
 # check if with file location
