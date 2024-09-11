@@ -3,6 +3,9 @@ Operating systems Lab exercise
 # Linux commands-Shell scripting
 Linux commands-Shell scripting
 
+### Developed by: PULI NAGA NEERAJ
+### Register number: 212223240130
+
 # AIM:
 To practice Linux Commands and Shell Scripting
 
